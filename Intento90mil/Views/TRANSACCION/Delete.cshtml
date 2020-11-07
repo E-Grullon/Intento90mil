@@ -1,0 +1,64 @@
+﻿@model Intento90mil.TRANSACCION
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TRANSACCION</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_TRANSACCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_TRANSACCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHA_TRANSACCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHA_TRANSACCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CANTIDAD_TRANSACCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CANTIDAD_TRANSACCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MONTO_TRANSACCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONTO_TRANSACCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ARTICULO.DESCRIPCION_ARTICULO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARTICULO.DESCRIPCION_ARTICULO)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

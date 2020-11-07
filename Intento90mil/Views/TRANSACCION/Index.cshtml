@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Intento90mil.TRANSACCION>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_TRANSACCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_TRANSACCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CANTIDAD_TRANSACCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTO_TRANSACCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ARTICULO.DESCRIPCION_ARTICULO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_TRANSACCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_TRANSACCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CANTIDAD_TRANSACCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTO_TRANSACCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ARTICULO.DESCRIPCION_ARTICULO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_TRANSACCION }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_TRANSACCION }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_TRANSACCION })
+        </td>
+    </tr>
+}
+
+</table>

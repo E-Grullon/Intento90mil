@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Intento90mil.ARTICULO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <form method="get">
+        <input type="text" id="Criterio" name="Criterio" />
+        <input type="submit" id="cmdBuscar" value="Buscar" />
+    </form>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPCION_ARTICULO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXISTENCIA_ARTICULO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COSTOUNITARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ESTADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPOINVENTARIO.DESCRIPCION_INVENTARIO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPCION_ARTICULO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXISTENCIA_ARTICULO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COSTOUNITARIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ESTADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPOINVENTARIO.DESCRIPCION_INVENTARIO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_ARTICULO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_ARTICULO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_ARTICULO })
+        </td>
+    </tr>
+}
+
+</table>
